@@ -3,22 +3,22 @@
 const AddSpot = () => {
     let handleAddSpot = e => {
         e.preventDefault()
-        let form = e.target
-
-        let name = form.name.value
-        let email=form.email.value
-        let spot=form.spot.value
-        let country= form.country.value
-        let location = form.location.value
-        let cost=form.cost.value
-        let time=form.time.value
-        let seasonality=form.seasonality.value
-        let visitors=form.visitors.value
-        let description=form.description.value
-        let photo = form.photo.value
-
-        let newSpot = { name, email, spot, country, location, cost, time, seasonality, visitors, description, photo }
+        const form = e.target
+        const name = form.name.value
+        const email=form.email.value
+        const spot=form.spot.value
+        const country= form.country.value
+        const location = form.location.value
+        const cost=form.cost.value
+        const time=form.time.value
+        const seasonality=form.seasonality.value
+        const visitors=form.visitors.value
+        const description=form.description.value
+        const photo = form.photo.value
+        
+        const newSpot = { name, email, spot, country, location, cost, time, seasonality, visitors, description, photo }
         console.log(newSpot)
+
     }
     return (
         <div className="bg-slate-400 p-24">
@@ -106,11 +106,11 @@ const AddSpot = () => {
                     </div>
                 </div>
                 {/* short description */}
-                <label class="form-control">
-                    <div class="label">
-                        <span class="label-text">Short description</span>
+                <label className="form-control">
+                    <div className="label">
+                        <span className="label-text">Short description</span>
                     </div>
-                    <textarea name="description" class="textarea textarea-bordered h-24"></textarea>
+                    <textarea name="description" className="textarea textarea-bordered h-24"></textarea>
                 </label>
                 {/* Photo URL form */}
                 <div className="mb-8">
