@@ -1,24 +1,43 @@
-
+import Swal from 'sweetalert2'
 
 const AddSpot = () => {
     let handleAddSpot = e => {
         e.preventDefault()
         const form = e.target
         const name = form.name.value
-        const email=form.email.value
-        const spot=form.spot.value
-        const country= form.country.value
+        const email = form.email.value
+        const spot = form.spot.value
+        const country = form.country.value
         const location = form.location.value
-        const cost=form.cost.value
-        const time=form.time.value
-        const seasonality=form.seasonality.value
-        const visitors=form.visitors.value
-        const description=form.description.value
+        const cost = form.cost.value
+        const time = form.time.value
+        const seasonality = form.seasonality.value
+        const visitors = form.visitors.value
+        const description = form.description.value
         const photo = form.photo.value
-        
+
         const newSpot = { name, email, spot, country, location, cost, time, seasonality, visitors, description, photo }
         console.log(newSpot)
 
+        fetch('http://localhost:3000/spots', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newSpot)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Submitted!',
+                        text: 'User added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
+            })
     }
     return (
         <div className="bg-slate-400 p-24">
