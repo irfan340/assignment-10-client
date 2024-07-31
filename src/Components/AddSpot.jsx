@@ -6,7 +6,7 @@ const AddSpot = () => {
         const form = e.target
         const name = form.name.value
         const email = form.email.value
-        const spot = form.spot.value
+        const spotName = form.spotName.value
         const country = form.country.value
         const location = form.location.value
         const cost = form.cost.value
@@ -16,7 +16,7 @@ const AddSpot = () => {
         const description = form.description.value
         const photo = form.photo.value
 
-        const newSpot = { name, email, spot, country, location, cost, time, seasonality, visitors, description, photo }
+        const newSpot = { name, email, spotName, country, location, cost, time, seasonality, visitors, description, photo }
         console.log(newSpot)
 
         fetch('http://localhost:3000/spots', {
@@ -69,7 +69,7 @@ const AddSpot = () => {
                             <span className="label-text">Spot Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" placeholder="Spot Name" name="spot" className="input input-bordered w-full" />
+                            <input type="text" placeholder="Spot Name" name="spotName" className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 md:ml-4">
